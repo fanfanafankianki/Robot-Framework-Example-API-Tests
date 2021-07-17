@@ -1,8 +1,8 @@
 *** Settings ***
+#Documentation    https://lichess.org/api
 Library  SeleniumLibrary
 Library  Collections
 Library  RequestsLibrary
-Suite Setup    Create Session  jsonplaceholder  https://lichess.org/
 *** Variables ***
 
 ${Browser}    Chrome

@@ -1,22 +1,21 @@
 *** Settings ***
+#Documentation    https://lichess.org/api
 Library  SeleniumLibrary
 Library  Collections
 Library  RequestsLibrary
-Suite Setup    Create Session  jsonplaceholder  https://lichess.org/
 *** Variables ***
 
-${Browser}    Chrome
-${URL}    https://explorer.lichess.ovh/
-${simul}    lichess
-${variant}    "standard"
-${fen}    fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2
+${URL}    https://lichess.org
+${export}    games/export/_ids
+${params}    ids=TJxUmbWK,4OtIh2oh
 
 *** Test Cases ***
-TC_004 Get Request Test on Simul Page
+TC_009 Post, export game by ID
     Create Session    lichess    https://lichess.org/    verify=true
-    ${response}=    get on session    lichess    url=${simul}  params=${variant} ${fen}
+    ${response}=    post on session    lichess    url=${export}    data=${params}
     log to console    ${response.status_code}
     ${code}=    convert to string    ${response.status_code}
     should be equal    ${code}    200
     should not be empty    ${response.content}
+
 

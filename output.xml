@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.7 on win32)" generated="20210717 20:59:36.880" rpa="false">
+<suite id="s1" name="TestCases" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases">
+<suite id="s1-s1" name="TC 001 Start Close Browser" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_001_Start_Close_Browser.robot">
+<test id="s1-s1-t1" name="TC_001 Browser Start and Close">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:37.287" level="INFO">Opening browser 'Chrome' to base url 'https://lichess.org'.</msg>
+<status status="PASS" starttime="20210717 20:59:37.286" endtime="20210717 20:59:39.564"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210717 20:59:39.564" endtime="20210717 20:59:41.748"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:37.285" endtime="20210717 20:59:41.749" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:36.920" endtime="20210717 20:59:41.751"></status>
+</suite>
+<suite id="s1-s2" name="TC 002 Get Request SimulPage" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_002_Get_Request_SimulPage.robot">
+<test id="s1-s2-t1" name="TC_002 Get Request Test on Simul Page">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:41.761" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:41.761" endtime="20210717 20:59:41.762"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${simul}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:41.916" level="INFO">GET Request : url=https://lichess.org/api/simul 
+ path_url=/api/simul 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:41.916" level="INFO">GET Response : url=https://lichess.org/api/simul 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:41 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body={"pending":[],"created":[],"started":[{"id":"3dVmFS33","host":{"id":"randommesses","name":"RandomMesses","rating":2161,"gameId":"SeLthnP8"},"name":"US open practice","fullName":"US open practice simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"practice","nbApplicants":0,"nbPairings":4},{"id":"9TceQ2Zm","host":{"id":"noggis","name":"noggis","rating":2503,"gameId":"wYzdzxQl","title":"NM","patron":true},"name":"NM noggis","fullName":"NM noggis simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":30},{"id":"2SF9JeBx","host":{"id":"mymchess","name":"MYMchess","rating":2403,"gameId":"7VYui2G7","title":"NM"},"name":"Advanced","fullName":"Advanced simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":4},{"id":"BECsX6rf","host":{"id":"chandulaeds","name":"ChandulaEDS","rating":2146,"gameId":"Bw1MOFtF"},"name":"ChandulaEDS","fullName":"ChandulaEDS simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":3},{"id":"lxOIVwy8","host":{"id":"trainer64lex","name":"trainer64lex","rating":2138,"gameId":"Y9cno8N9"},"name":"trainer64lex","fullName":"trainer64lex simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":5},{"id":"XHoJPB9u","host":{"id":"pressive","name":"pressive","rating":2716,"gameId":"jwMC7UER","title":"IM","patron":true},"name":"IM pressive playing on twitch 10+30","fullName":"IM pressive playing on twitch 10+30 simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"https://www.twitch.tv/dragonb70","nbApplicants":0,"nbPairings":22},{"id":"B3egmB9g","host":{"id":"sunderroshini","name":"Sunderroshini","rating":2101,"gameId":"Y2OCpgwz"},"name":"Sathyanarayanan chess game","fullName":"Sathyanarayanan chess game simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":9},{"id":"KL1k8Whf","host":{"id":"blitzchessclub","name":"blitzchessclub","rating":2373,"gameId":"YEPtGoZa","title":"CM"},"name":"CM blitzchessclub","fullName":"CM blitzchessclub simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"This is Exclusive Simul for PCC academy and My youtube Subscribers\r\nhttps://YouTube.com/ChessbuzzIndia a fast growing Hindi Chess Channel\r\nDo Subscribe and Join\r\nMax 25 Will be accepted \r\nStarts: Soon\r\nTill Start Enjoy Some Videos \r\nhttps://youtu.be/-ZlZHUirdiM\r\nhttps://youtu.be/rJMiYM-pa5o\r\nhttps://youtu.be/ZqSV6aVBj3M","nbApplicants":0,"nbPairings":26},{"id":"3q2MUL4Q","host":{"id":"chessassist","name":"ChessAssist","rating":2310,"gameId":"zKqZVyJX","title":"NM"},"name":"NM ChessAssist","fullName":"NM ChessAssist simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"15 Player Simul\r\n\r\nDo subscribe to my youtube channel for daily live streams\r\n\r\nhttps://www.youtube.com/channel/UCnzdBGxRbY9OqwBo8E5uXcA","nbApplicants":0,"nbPairings":13},{"id":"YFg0EebP","host":{"id":"good_luck_chuck","name":"good_luck_chuck","rating":2060,"gameId":"65N0OSul"},"name":"Sajjan chess academy","fullName":"Sajjan chess academy simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":true,"isFinished":false,"text":"","nbApplicants":0,"nbPairings":6}],"finished":[{"id":"SArwz2qr","host":{"id":"steva23","name":"steva23","rating":2410,"title":"FM"},"name":"FM steva23","fullName":"FM steva23 simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":19},{"id":"9dVrFoy9","host":{"id":"jactorres","name":"Jactorres","rating":2524,"title":"FM"},"name":"FM Jactorres","fullName":"FM Jactorres simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":5},{"id":"DqvYcN69","host":{"id":"zhigalko_sergei","name":"Zhigalko_Sergei","rating":2857,"title":"GM","patron":true},"name":"GM Zhigalko Sergei","fullName":"GM Zhigalko Sergei simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"Мой youtube канал: https://www.youtube.com/c/SergeiZhigalkoChess\r\nДрузья! Буду благодарен за подписку! :)\r\n\r\nMy youtube channel: https://www.youtube.com/c/SergeiZhigalkoChess\r\nFriends! I would be grateful for your subscription! :)","nbApplicants":0,"nbPairings":8},{"id":"EoXyUNL8","host":{"id":"bwert","name":"Bwert","rating":2092,"title":"CM"},"name":"CM Bwert","fullName":"CM Bwert simul","variants":[{"key":"chess960","icon":"","name":"Chess960"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"starting at 16:10 ( in bout 15 min)","nbApplicants":0,"nbPairings":13},{"id":"99F7UxCn","host":{"id":"sahajasricholleti","name":"sahajasricholleti","rating":2371,"title":"WIM"},"name":"WIM sahajasricholleti","fullName":"WIM sahajasricholleti simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":4},{"id":"hHKmiKm2","host":{"id":"lazymeomeo","name":"lazymeomeo","rating":2546,"title":"WIM"},"name":"WIM lazymeomeo","fullName":"WIM lazymeomeo simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":10},{"id":"iaC1DIAi","host":{"id":"candramawa_meong","name":"Candramawa_Meong","rating":2412,"title":"IM"},"name":"IM Candramawa Meong","fullName":"IM Candramawa Meong simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":5},{"id":"NEx3Xk24","host":{"id":"insane_since_2003","name":"Insane_Since_2003","rating":2304,"title":"WCM"},"name":"WCM's Standard","fullName":"WCM's Standard simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"Subscribe to my YouTube channel to join the tournament &gt; https://www.youtube.com/channel/UCz4ZXccCb487N1RKXAcHxkA/featured","nbApplicants":0,"nbPairings":18},{"id":"Jo1k27tj","host":{"id":"zhigalko_sergei","name":"Zhigalko_Sergei","rating":2857,"title":"GM","patron":true},"name":"GM Zhigalko Sergei","fullName":"GM Zhigalko Sergei simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"Мой youtube канал: https://www.youtube.com/c/SergeiZhigalkoChess\r\nДрузья! Буду благодарен за подписку! :)\r\n\r\nMy youtube channel: https://www.youtube.com/c/SergeiZhigalkoChess\r\nFriends! I would be grateful for your subscription! :)","nbApplicants":0,"nbPairings":8},{"id":"PDnvLOq1","host":{"id":"annaschach","name":"AnnaSchach","rating":2403,"title":"WIM"},"name":"WIM AnnaSchach","fullName":"WIM AnnaSchach simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"5x games, good luck!","nbApplicants":0,"nbPairings":5},{"id":"2p6gkKmC","host":{"id":"variantschris","name":"VariantsChris","rating":2663,"title":"IM"},"name":"IM VariantsChris","fullName":"IM VariantsChris simul","variants":[{"key":"crazyhouse","icon":"","name":"Crazyhouse"},{"key":"chess960","icon":"","name":"Chess960"},{"key":"kingOfTheHill","icon":"","name":"King of the Hill"},{"key":"threeCheck","icon":"","name":"Three-check"},{"key":"antichess","icon":"","name":"Antichess"},{"key":"atomic","icon":"","name":"Atomic"},{"key":"horde","icon":"","name":"Horde"},{"key":"racingKings","icon":"","name":"Racing Kings"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"","nbApplicants":0,"nbPairings":9},{"id":"p9fcXUsJ","host":{"id":"variantschris","name":"VariantsChris","rating":2663,"title":"IM"},"name":"IM VariantsChris","fullName":"IM VariantsChris simul","variants":[{"key":"crazyhouse","icon":"","name":"Crazyhouse"},{"key":"chess960","icon":"","name":"Chess960"},{"key":"kingOfTheHill","icon":"","name":"King of the Hill"},{"key":"threeCheck","icon":"","name":"Three-check"},{"key":"antichess","icon":"","name":"Antichess"},{"key":"atomic","icon":"","name":"Atomic"},{"key":"horde","icon":"","name":"Horde"},{"key":"racingKings","icon":"","name":"Racing Kings"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"Watch stream on twitch.tv/imchristianseel Any variant besides classical. 15 players max","nbApplicants":0,"nbPairings":15},{"id":"AHdBwiyX","host":{"id":"drvitman","name":"Drvitman","rating":2898,"title":"GM"},"name":"GM Drvitman","fullName":"GM Drvitman simul","variants":[{"key":"standard","icon":"","name":"Standard"}],"isCreated":false,"isRunning":false,"isFinished":true,"text":"Hello everyone!\r\nYou have to join https://lichess.org/team/chess_training_2021-fan-club to have a chance to be accepted here!\r\nGood luck, have fun!","nbApplicants":0,"nbPairings":7},{"id":"J7scTsxA","host":{"id":"variantschris","name":"VariantsChris","rating":2663,"title":"IM"},"name":"IM VariantsChris","fullName":"IM VariantsChris simul","variants":[{"key":"crazyhouse","icon":"","name":"Crazyhouse"},{"key":"chess960","icon":"","name":"Chess960"},{"key":"kingOfTheHill","icon":"","name":"King of the Hill"},{"key":"threeCheck","icon":"","name":"Three-check"},{"key":"antichess","icon":"",... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210717 20:59:41.917" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:41.762" endtime="20210717 20:59:41.917"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:41.918" endtime="20210717 20:59:41.919"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:41.921" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:41.919" endtime="20210717 20:59:41.921"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:41.921" endtime="20210717 20:59:41.922"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:41.922" level="INFO">Length is 13058</msg>
+<status status="PASS" starttime="20210717 20:59:41.922" endtime="20210717 20:59:41.922"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:41.760" endtime="20210717 20:59:41.923" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:41.754" endtime="20210717 20:59:41.924"></status>
+</suite>
+<suite id="s1-s3" name="TC 003 Post Create Challenge" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_003_Post_Create_Challenge.robot">
+<test id="s1-s3-t1" name="TC_003 Create challenge for 2 players">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:41.932" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:41.932" endtime="20210717 20:59:41.932"></status>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${challenge}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.072" level="INFO">POST Request : url=https://lichess.org/api/challenge/open 
+ path_url=/api/challenge/open 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:42.072" level="INFO">POST Response : url=https://lichess.org/api/challenge/open 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body={"challenge":{"id":"jhTC3VLb","url":"https://lichess.org/jhTC3VLb","status":"created","challenger":null,"destUser":null,"variant":{"key":"standard","name":"Standard","short":"Std"},"rated":false,"speed":"correspondence","timeControl":{"type":"unlimited"},"color":"random","perf":{"icon":"","name":"Correspondence"}},"socketVersion":0,"urlWhite":"https://lichess.org/jhTC3VLb?color=white","urlBlack":"https://lichess.org/jhTC3VLb?color=black"} 
+ </msg>
+<msg timestamp="20210717 20:59:42.073" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:41.933" endtime="20210717 20:59:42.073"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.073" endtime="20210717 20:59:42.074"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.077" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.076" endtime="20210717 20:59:42.077"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.077" endtime="20210717 20:59:42.078"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.079" level="INFO">Length is 445</msg>
+<status status="PASS" starttime="20210717 20:59:42.078" endtime="20210717 20:59:42.079"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:41.931" endtime="20210717 20:59:42.079" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:41.926" endtime="20210717 20:59:42.081"></status>
+</suite>
+<suite id="s1-s4" name="TC 004 Get Board Analysis" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_004_Get_Board_Analysis.robot">
+<test id="s1-s4-t1" name="TC_004 Get Lichess Board Analysis">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.094" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:42.094" endtime="20210717 20:59:42.094"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${lichess}</arg>
+<arg>params=${variant} ${fen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.314" level="INFO">GET Request : url=https://lichess.org/lichess?%22standard%22%20fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR%20b%20KQkq%20-%200%202 (redirected) 
+ path_url=/lichess?%22standard%22%20fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR%20b%20KQkq%20-%200%202 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:42.314" level="INFO">GET Response : url=https://lichess.org/@/Lichess 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body=&lt;!DOCTYPE html&gt;&lt;html lang="en-GB"&gt;&lt;!-- Lichess is open source! See https://lichess.org/source --&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"&gt;&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' https://lichess1.org; connect-src 'self' https://lichess1.org wss://socket0.lichess.org wss://socket1.lichess.org wss://socket2.lichess.org wss://socket3.lichess.org wss://socket4.lichess.org wss://socket5.lichess.org https://explorer.lichess.ovh https://tablebase.lichess.ovh; style-src 'self' 'unsafe-inline' https://lichess1.org; frame-src 'self' https://lichess1.org https://www.youtube.com https://player.twitch.tv; worker-src 'self' https://lichess1.org; img-src data: *; script-src 'nonce-kTMQaL4ue6L4sLdRsxKEoupb' 'self' https://lichess1.org; base-uri 'none';"&gt;&lt;meta name="theme-color" content="#dbd7d1"&gt;&lt;title&gt;Lichess : Activity • lichess.org&lt;/title&gt;&lt;link href="https://lichess1.org/assets/_OyV5AR/css/site.light.min.css" rel="stylesheet" /&gt;&lt;link href="https://lichess1.org/assets/_OyV5AR/css/user.show.light.min.css" rel="stylesheet" /&gt;&lt;link id="piece-sprite" href="https://lichess1.org/assets/_OyV5AR/piece-css/cburnett.css" rel="stylesheet" /&gt;&lt;meta content="Lichess played 10 games since Nov 22, 2010." name="description" /&gt;&lt;link rel="mask-icon" href="https://lichess1.org/assets/_OyV5AR/logo/lichess.svg" style="color: black;" /&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-512.png" sizes="512x512"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-256.png" sizes="256x256"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-192.png" sizes="192x192"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-128.png" sizes="128x128"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-64.png" sizes="64x64"&gt;&lt;link id="favicon" rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-32.png" sizes="32x32"&gt;&lt;meta name="google" content="notranslate"&gt;&lt;meta property="og:title" content="Lichess (1500)" /&gt;&lt;meta property="og:description" content="Lichess played 10 games since Nov 22, 2010." /&gt;&lt;meta property="og:url" content="https://lichess.org/@/Lichess" /&gt;&lt;meta property="og:type" content="website" /&gt;&lt;meta property="og:site_name" content="lichess.org" /&gt;&lt;meta property="og:image" content="https://lichess1.org/assets/_OyV5AR/logo/lichess-tile-wide.png" /&gt;&lt;meta name="twitter:card" content="summary" /&gt;&lt;meta name="twitter:title" content="Lichess (1500)" /&gt;&lt;meta name="twitter:description" content="Lichess played 10 games since Nov 22, 2010." /&gt;&lt;meta name="twitter:image" content="https://lichess1.org/assets/_OyV5AR/logo/lichess-tile.png" /&gt;&lt;link href="/blog.atom" type="application/atom+xml" rel="alternate" title="Blog" /&gt;&lt;link rel="preload" href="https://lichess1.org/assets/_OyV5AR/font/lichess.woff2" as="font" type="font/woff2" crossorigin&gt;&lt;link rel="preload" href="https://lichess1.org/assets/_OyV5AR/font/lichess.chess.woff2" as="font" type="font/woff2" crossorigin&gt;&lt;link rel="manifest" href="/manifest.json"&gt;&lt;meta name="twitter:site" content="@lichess"&gt;&lt;link rel="jslicense" href="/source"&gt;&lt;/head&gt;&lt;body class="light brown Woodi Basic coords-in" data-vapid="BGr5CL0QlEYa7qW7HLqe7DFkCeTsYMLsi1Db+5Vwt1QBIs6+WxN8066AjtP8S9u+w+CbleE8xWY+qQaNEMs7sAs=" data-sound-set="standard" data-socket-domains="socket0.lichess.org,socket1.lichess.org,socket2.lichess.org,socket3.lichess.org,socket4.lichess.org,socket5.lichess.org" data-asset-url="https://lichess1.org" data-asset-version="OyV5AR" data-theme="light" data-piece-set="cburnett"&gt;&lt;form id="blind-mode" action="/toggle-blind-mode" method="POST"&gt;&lt;input type="hidden" name="enable" value="1"&gt;&lt;input type="hidden" name="redirect" value="/@/Lichess"&gt;&lt;button type="submit"&gt;Accessibility: Enable blind mode&lt;/button&gt;&lt;/form&gt;&lt;header id="top"&gt;&lt;div class="site-title-nav"&gt;
+&lt;input type="checkbox" id="tn-tg" class="topnav-toggle fullscreen-toggle" autocomplete="off" aria-label="Navigation"&gt;
+&lt;label for="tn-tg" class="fullscreen-mask"&gt;&lt;/label&gt;
+&lt;label for="tn-tg" class="hbg"&gt;&lt;span class="hbg__in"&gt;&lt;/span&gt;&lt;/label&gt;&lt;h1 class="site-title"&gt;&lt;a href="/"&gt;lichess&lt;span&gt;.org&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;&lt;nav id="topnav" class="hover"&gt;&lt;section&gt;&lt;a href="/"&gt;&lt;span class="play"&gt;Play&lt;/span&gt;&lt;span class="home"&gt;lichess.org&lt;/span&gt;&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/?any#hook"&gt;Create a game&lt;/a&gt;&lt;a href="/tournament"&gt;Arena tournaments&lt;/a&gt;&lt;a href="/swiss"&gt;Swiss tournaments&lt;/a&gt;&lt;a href="/simul"&gt;Simultaneous exhibitions&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/training"&gt;Puzzles&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/training"&gt;Puzzles&lt;/a&gt;&lt;a href="/training/dashboard/30"&gt;Puzzle Dashboard&lt;/a&gt;&lt;a href="/streak"&gt;Puzzle Streak&lt;/a&gt;&lt;a href="/storm"&gt;Puzzle Storm&lt;/a&gt;&lt;a href="/racer"&gt;Puzzle Racer&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/practice"&gt;Learn&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/learn"&gt;Chess basics&lt;/a&gt;&lt;a href="/practice"&gt;Practice&lt;/a&gt;&lt;a href="/training/coordinate"&gt;Coordinates&lt;/a&gt;&lt;a href="/study"&gt;Study&lt;/a&gt;&lt;a href="/coach"&gt;Coaches&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/tv"&gt;Watch&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/tv"&gt;Lichess TV&lt;/a&gt;&lt;a href="/games"&gt;Current games&lt;/a&gt;&lt;a href="/streamer"&gt;Streamers&lt;/a&gt;&lt;a href="/broadcast"&gt;Broadcasts&lt;/a&gt;&lt;a href="/video"&gt;Video library&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/player"&gt;Community&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/player"&gt;Players&lt;/a&gt;&lt;a href="/team"&gt;Teams&lt;/a&gt;&lt;a href="/forum"&gt;Forum&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/analysis"&gt;Tools&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/analysis"&gt;Analysis board&lt;/a&gt;&lt;a href="/analysis#explorer"&gt;Opening explorer&lt;/a&gt;&lt;a href="/editor"&gt;Board editor&lt;/a&gt;&lt;a href="/paste"&gt;Import game&lt;/a&gt;&lt;a href="/games/search"&gt;Advanced search&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="site-buttons"&gt;&lt;div id="clinput"&gt;&lt;a class="link"&gt;&lt;span data-icon=""&gt;&lt;/span&gt;&lt;/a&gt;&lt;input spellcheck="false" autocomplete="false" aria-label="Search" placeholder="Search" /&gt;&lt;/div&gt;&lt;div class="dasher"&gt;&lt;a class="toggle link anon"&gt;&lt;span title="Preferences" data-icon=""&gt;&lt;/span&gt;&lt;/a&gt;&lt;div id="dasher_app" class="dropdown" data-playing="false"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;a href="/login?referrer=/@/Lichess" class="signin button button-empty"&gt;Sign in&lt;/a&gt;&lt;/div&gt;&lt;/header&gt;&lt;div id="main-wrap" class="is2d"&gt;&lt;main class="page-menu" data-username="Lichess"&gt;&lt;aside class="page-menu__menu"&gt;&lt;div class="side sub-ratings"&gt;&lt;a data-icon="" title="Very fast games: less than 3 minutes" class="empty" href="/@/Lichess/perf/bullet"&gt;&lt;span&gt;&lt;h3&gt;Bullet&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 games&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" title="Fast games: 3 to 8 minutes" class="empty" href="/@/Lichess/perf/blitz"&gt;&lt;span&gt;&lt;h3&gt;Blitz&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 games&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" title="Rapid games: 8 to 25 minutes" class="empty" href="/@/Lichess/perf/rapid"&gt;&lt;span&gt;&lt;h3&gt;Rapid&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 games&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" title="Classical games: 25 minutes and more" class="empty" href="/@/Lichess/perf/classical"&gt;&lt;span&gt;&lt;h3&gt;Classical&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 games&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" title="Correspondence games: one or several days per move" class="empty" href="/@/Lichess/perf/correspondence"&gt;&lt;span&gt;&lt;h3&gt;Correspondence&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 games&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;hr /&gt;&lt;a data-icon="" title="Chess tactics trainer" class="empty"&gt;&lt;span&gt;&lt;h3&gt;Puzzles&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;?&lt;/strong&gt;  &lt;span&gt;0 puzzles&lt;/span&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" class="empty" href="/storm/dashboard/Lichess"&gt;&lt;span&gt;&lt;h3&gt;Puzzle Storm&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" class="empty" href="/racer"&gt;&lt;span&gt;&lt;h3&gt;Puzzle Racer&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;a data-icon="" class="empty" href="/streak"&gt;&lt;span&gt;&lt;h3&gt;Puzzle Streak&lt;/h3&gt;&lt;rating&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/rating&gt;&lt;/span&gt;&lt;i data-icon=""&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/aside&gt;&lt;div class="page-menu__content box user-show"&gt;&lt;div class="box__top user-show__header"&gt;&lt;h1 class="user-link online"&gt;&lt;a href="/patron"&gt;&lt;i class="line patron" title="Lichess Patron"&gt;&lt;/i&gt;&lt;/a&gt;&lt;span class="user-link" data-href="/@/Lichess"&gt;Lichess&lt;/span&gt;&lt;/h1&gt;&lt;div class="trophies"&gt;&lt;a class="trophy award verified icon3d" title="Verified account" aria-label="Verified account"&gt;&lt;/a&gt;&lt;a href="/streamer/Lichess" class="trophy award icon3d streamer" title="Lichess Streamer" aria-label="Lichess Streamer"&gt;&lt;/a&gt;&lt;a href="/patron" class="trophy award patron icon3d" title="Patron since 20 Jul 2018" aria-label="Patron since 20 Jul 2018"&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="user-show__social"&gt;&lt;div class="number-menu"&gt;&lt;a class="nm-item" href="/@/Lichess/followers"&gt;&lt;strong&gt;15,458&lt;/strong&gt;&lt;br /&gt;followers&lt;/a&gt;&lt;a href="/@/Lichess/tournaments/recent" class="nm-item tournament_stats" data-toints="0"&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;br /&gt;tournament points&lt;/a&gt;&lt;a href="/study/by/Lichess" class="nm-item"&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;br /&gt;studies&lt;/a&gt;&lt;a class="nm-item" href="/forum/search?text=user%3ALichess"&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;br /&gt;forum posts&lt;/a&gt;&lt;/div&gt;&lt;div class="user-actions btn-rack"&gt;&lt;a class="btn-rack__btn" href="/@/Lichess/tv" title="Watch games" data-icon=""&gt;&lt;/a&gt;&lt;a class="btn-rack__btn" href="/@/Lichess/download" title="Export games" data-icon=""&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="note-zone"&gt;&lt;form method="post" action="/@/Lichess/note?note"&gt;&lt;textarea name="text" placeholder="Write a private note about this user"&gt;&lt;/textarea&gt;&lt;input type="hidden" name="mod" value="false" /&gt;&lt;button type="submit" class="button"&gt;Send&lt;/button&gt;&lt;/form&gt;&lt;div&gt;No note yet&lt;/div&gt;&lt;/div&gt;&lt;div id="us_profile"&gt;&lt;div class="profile-side"&gt;&lt;div class="user-infos"&gt;&lt;p class="bio"&gt;&lt;img class="embed" src="https://i.imgur.com/2HhZd2d.jpg" alt="https://i.imgur.com/2HhZd2d.jpg"/&gt;&lt;/p&gt;&lt;div class="s... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210717 20:59:42.315" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:42.095" endtime="20210717 20:59:42.315"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.315" endtime="20210717 20:59:42.316"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.318" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.317" endtime="20210717 20:59:42.318"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.319" endtime="20210717 20:59:42.319"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.320" level="INFO">Length is 25055</msg>
+<status status="PASS" starttime="20210717 20:59:42.319" endtime="20210717 20:59:42.320"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:42.092" endtime="20210717 20:59:42.321" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.084" endtime="20210717 20:59:42.323"></status>
+</suite>
+<suite id="s1-s5" name="TC 005 Get Position Evaluation" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_005_Get_Position_Evaluation.robot">
+<test id="s1-s5-t1" name="TC_005 Get cloud evaluation of a position test">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.334" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:42.333" endtime="20210717 20:59:42.334"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${eval}</arg>
+<arg>params=${position}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.473" level="INFO">GET Request : url=https://lichess.org/api/cloud-eval?fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR%20b%20KQkq%20-%200%202 
+ path_url=/api/cloud-eval?fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR%20b%20KQkq%20-%200%202 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:42.474" level="INFO">GET Response : url=https://lichess.org/api/cloud-eval?fen=rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR%20b%20KQkq%20-%200%202 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body={"fen":"rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2","knodes":13409097,"depth":49,"pvs":[{"moves":"c8f5 d2d4 e7e6 c2c3 c7c5 f1b5 b8d7 g1e2 a7a6 b5d3","cp":-29}]} 
+ </msg>
+<msg timestamp="20210717 20:59:42.474" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:42.334" endtime="20210717 20:59:42.474"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.474" endtime="20210717 20:59:42.475"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.476" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.476" endtime="20210717 20:59:42.477"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.477" endtime="20210717 20:59:42.478"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.479" level="INFO">Length is 177</msg>
+<status status="PASS" starttime="20210717 20:59:42.478" endtime="20210717 20:59:42.479"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:42.332" endtime="20210717 20:59:42.479" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.326" endtime="20210717 20:59:42.481"></status>
+</suite>
+<suite id="s1-s6" name="TC 006 Get User Status" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_006_Get_User_Status.robot">
+<test id="s1-s6-t1" name="TC_006 Get real-time users status test">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.492" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:42.492" endtime="20210717 20:59:42.493"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${users}</arg>
+<arg>params=${params}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.636" level="INFO">GET Request : url=https://lichess.org/api/users/status?ids=fanfanafankianki 
+ path_url=/api/users/status?ids=fanfanafankianki 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:42.636" level="INFO">GET Response : url=https://lichess.org/api/users/status?ids=fanfanafankianki 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body=[{"name":"fanfanafankianki","id":"fanfanafankianki"}] 
+ </msg>
+<msg timestamp="20210717 20:59:42.636" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:42.493" endtime="20210717 20:59:42.636"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.637" endtime="20210717 20:59:42.638"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.640" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.639" endtime="20210717 20:59:42.640"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.641" endtime="20210717 20:59:42.642"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.643" level="INFO">Length is 53</msg>
+<status status="PASS" starttime="20210717 20:59:42.642" endtime="20210717 20:59:42.643"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:42.491" endtime="20210717 20:59:42.643" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.483" endtime="20210717 20:59:42.645"></status>
+</suite>
+<suite id="s1-s7" name="TC 007 Get Top 10 Users" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_007_Get_Top_10_Users.robot">
+<test id="s1-s7-t1" name="TC_007 Get top 10 users">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.659" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:42.658" endtime="20210717 20:59:42.659"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${top10}</arg>
+<arg>params=${params}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.809" level="INFO">GET Request : url=https://lichess.org/player?application/vnd.lichess.v3+json 
+ path_url=/player?application/vnd.lichess.v3+json 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:42.809" level="INFO">GET Response : url=https://lichess.org/player?application/vnd.lichess.v3+json 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body=&lt;!DOCTYPE html&gt;&lt;html lang="en-GB"&gt;&lt;!-- Lichess is open source! See https://lichess.org/source --&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"&gt;&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' https://lichess1.org; connect-src 'self' https://lichess1.org wss://socket0.lichess.org wss://socket1.lichess.org wss://socket2.lichess.org wss://socket3.lichess.org wss://socket4.lichess.org wss://socket5.lichess.org https://explorer.lichess.ovh https://tablebase.lichess.ovh; style-src 'self' 'unsafe-inline' https://lichess1.org; frame-src 'self' https://lichess1.org https://www.youtube.com https://player.twitch.tv; worker-src 'self' https://lichess1.org; img-src data: *; script-src 'nonce-Gwsz71WBJlBepPVhEHfw21GW' 'self' https://lichess1.org; base-uri 'none';"&gt;&lt;meta name="theme-color" content="#dbd7d1"&gt;&lt;title&gt;Players • lichess.org&lt;/title&gt;&lt;link href="https://lichess1.org/assets/_OyV5AR/css/site.light.min.css" rel="stylesheet" /&gt;&lt;link href="https://lichess1.org/assets/_OyV5AR/css/user.list.light.min.css" rel="stylesheet" /&gt;&lt;link id="piece-sprite" href="https://lichess1.org/assets/_OyV5AR/piece-css/cburnett.css" rel="stylesheet" /&gt;&lt;meta content="Best chess players in bullet, blitz, rapid, classical, Chess960 and more chess variants" name="description" /&gt;&lt;link rel="mask-icon" href="https://lichess1.org/assets/_OyV5AR/logo/lichess.svg" style="color: black;" /&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-512.png" sizes="512x512"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-256.png" sizes="256x256"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-192.png" sizes="192x192"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-128.png" sizes="128x128"&gt;&lt;link rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-64.png" sizes="64x64"&gt;&lt;link id="favicon" rel="icon" type="image/png" href="https://lichess1.org/assets/_OyV5AR/logo/lichess-favicon-32.png" sizes="32x32"&gt;&lt;meta name="google" content="notranslate"&gt;&lt;meta property="og:title" content="Chess players and leaderboards" /&gt;&lt;meta property="og:description" content="Best chess players in bullet, blitz, rapid, classical, Chess960 and more chess variants" /&gt;&lt;meta property="og:url" content="https://lichess.org/player" /&gt;&lt;meta property="og:type" content="website" /&gt;&lt;meta property="og:site_name" content="lichess.org" /&gt;&lt;meta name="twitter:card" content="summary" /&gt;&lt;meta name="twitter:title" content="Chess players and leaderboards" /&gt;&lt;meta name="twitter:description" content="Best chess players in bullet, blitz, rapid, classical, Chess960 and more chess variants" /&gt;&lt;link href="/blog.atom" type="application/atom+xml" rel="alternate" title="Blog" /&gt;&lt;link rel="preload" href="https://lichess1.org/assets/_OyV5AR/font/lichess.woff2" as="font" type="font/woff2" crossorigin&gt;&lt;link rel="preload" href="https://lichess1.org/assets/_OyV5AR/font/lichess.chess.woff2" as="font" type="font/woff2" crossorigin&gt;&lt;link rel="manifest" href="/manifest.json"&gt;&lt;meta name="twitter:site" content="@lichess"&gt;&lt;link rel="jslicense" href="/source"&gt;&lt;/head&gt;&lt;body class="light brown Woodi Basic coords-in" data-vapid="BGr5CL0QlEYa7qW7HLqe7DFkCeTsYMLsi1Db+5Vwt1QBIs6+WxN8066AjtP8S9u+w+CbleE8xWY+qQaNEMs7sAs=" data-sound-set="standard" data-socket-domains="socket0.lichess.org,socket1.lichess.org,socket2.lichess.org,socket3.lichess.org,socket4.lichess.org,socket5.lichess.org" data-asset-url="https://lichess1.org" data-asset-version="OyV5AR" data-theme="light" data-piece-set="cburnett"&gt;&lt;form id="blind-mode" action="/toggle-blind-mode" method="POST"&gt;&lt;input type="hidden" name="enable" value="1"&gt;&lt;input type="hidden" name="redirect" value="/player"&gt;&lt;button type="submit"&gt;Accessibility: Enable blind mode&lt;/button&gt;&lt;/form&gt;&lt;header id="top"&gt;&lt;div class="site-title-nav"&gt;
+&lt;input type="checkbox" id="tn-tg" class="topnav-toggle fullscreen-toggle" autocomplete="off" aria-label="Navigation"&gt;
+&lt;label for="tn-tg" class="fullscreen-mask"&gt;&lt;/label&gt;
+&lt;label for="tn-tg" class="hbg"&gt;&lt;span class="hbg__in"&gt;&lt;/span&gt;&lt;/label&gt;&lt;h1 class="site-title"&gt;&lt;a href="/"&gt;lichess&lt;span&gt;.org&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;&lt;nav id="topnav" class="hover"&gt;&lt;section&gt;&lt;a href="/"&gt;&lt;span class="play"&gt;Play&lt;/span&gt;&lt;span class="home"&gt;lichess.org&lt;/span&gt;&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/?any#hook"&gt;Create a game&lt;/a&gt;&lt;a href="/tournament"&gt;Arena tournaments&lt;/a&gt;&lt;a href="/swiss"&gt;Swiss tournaments&lt;/a&gt;&lt;a href="/simul"&gt;Simultaneous exhibitions&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/training"&gt;Puzzles&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/training"&gt;Puzzles&lt;/a&gt;&lt;a href="/training/dashboard/30"&gt;Puzzle Dashboard&lt;/a&gt;&lt;a href="/streak"&gt;Puzzle Streak&lt;/a&gt;&lt;a href="/storm"&gt;Puzzle Storm&lt;/a&gt;&lt;a href="/racer"&gt;Puzzle Racer&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/practice"&gt;Learn&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/learn"&gt;Chess basics&lt;/a&gt;&lt;a href="/practice"&gt;Practice&lt;/a&gt;&lt;a href="/training/coordinate"&gt;Coordinates&lt;/a&gt;&lt;a href="/study"&gt;Study&lt;/a&gt;&lt;a href="/coach"&gt;Coaches&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/tv"&gt;Watch&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/tv"&gt;Lichess TV&lt;/a&gt;&lt;a href="/games"&gt;Current games&lt;/a&gt;&lt;a href="/streamer"&gt;Streamers&lt;/a&gt;&lt;a href="/broadcast"&gt;Broadcasts&lt;/a&gt;&lt;a href="/video"&gt;Video library&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/player"&gt;Community&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/player"&gt;Players&lt;/a&gt;&lt;a href="/team"&gt;Teams&lt;/a&gt;&lt;a href="/forum"&gt;Forum&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section&gt;&lt;a href="/analysis"&gt;Tools&lt;/a&gt;&lt;div role="group"&gt;&lt;a href="/analysis"&gt;Analysis board&lt;/a&gt;&lt;a href="/analysis#explorer"&gt;Opening explorer&lt;/a&gt;&lt;a href="/editor"&gt;Board editor&lt;/a&gt;&lt;a href="/paste"&gt;Import game&lt;/a&gt;&lt;a href="/games/search"&gt;Advanced search&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;/nav&gt;&lt;/div&gt;&lt;div class="site-buttons"&gt;&lt;div id="clinput"&gt;&lt;a class="link"&gt;&lt;span data-icon=""&gt;&lt;/span&gt;&lt;/a&gt;&lt;input spellcheck="false" autocomplete="false" aria-label="Search" placeholder="Search" /&gt;&lt;/div&gt;&lt;div class="dasher"&gt;&lt;a class="toggle link anon"&gt;&lt;span title="Preferences" data-icon=""&gt;&lt;/span&gt;&lt;/a&gt;&lt;div id="dasher_app" class="dropdown" data-playing="false"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;a href="/login?referrer=/player" class="signin button button-empty"&gt;Sign in&lt;/a&gt;&lt;/div&gt;&lt;/header&gt;&lt;div id="main-wrap" class="full-screen-force is2d"&gt;&lt;main class="page-menu"&gt;&lt;nav class="page-menu__menu subnav"&gt;&lt;a class="active" href="/player"&gt;Leaderboard&lt;/a&gt;&lt;a class="" href="/stat/rating/distribution/blitz"&gt;Rating stats&lt;/a&gt;&lt;a class="" href="/tournament/leaderboard"&gt;Tournament winners&lt;/a&gt;&lt;a class="" href="/tournament/shields"&gt;Shields&lt;/a&gt;&lt;a class="" href="/player/bots"&gt;Online bots&lt;/a&gt;&lt;/nav&gt;&lt;div class="community page-menu__content box box-pad"&gt;&lt;section class="community__online"&gt;&lt;h2&gt;Online players&lt;/h2&gt;&lt;ol class="user-top"&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/C9C9C9C9C9"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;C9C9C9C9C9&lt;/a&gt;&lt;span title="Bullet rating over 4,608 games" data-icon="" class="text"&gt;3090&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="offline user-link ulpt" href="/@/nihalsarin2004"&gt;&lt;i class="line patron" title="Lichess Patron"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;nihalsarin2004&lt;/a&gt;&lt;span title="Bullet rating over 10,425 games" data-icon="" class="text"&gt;3062&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Zhigalko_Sergei"&gt;&lt;i class="line patron" title="Lichess Patron"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;Zhigalko_Sergei&lt;/a&gt;&lt;span title="Bullet rating over 32,475 games" data-icon="" class="text"&gt;3051&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/MrBochwalt"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;MrBochwalt&lt;/a&gt;&lt;span title="Bullet rating over 2,049 games" data-icon="" class="text"&gt;3000&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Night-King96"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;Night-King96&lt;/a&gt;&lt;span title="Bullet rating over 7,260 games" data-icon="" class="text"&gt;2964&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/AbasovN"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;AbasovN&lt;/a&gt;&lt;span title="Bullet rating over 4,345 games" data-icon="" class="text"&gt;2961&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/mutdpro"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="International Master"&gt;IM&lt;/span&gt;&amp;nbsp;mutdpro&lt;/a&gt;&lt;span title="Bullet rating over 7,900 games" data-icon="" class="text"&gt;2949&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Benefactorr"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;Benefactorr&lt;/a&gt;&lt;span title="Blitz rating over 4,663 games" data-icon="" class="text"&gt;2956&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/MatthewG-p4p"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="International Master"&gt;IM&lt;/span&gt;&amp;nbsp;MatthewG-p4p&lt;/a&gt;&lt;span title="Bullet rating over 13,897 games" data-icon="" class="text"&gt;2935&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Heisenberg01"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="FIDE Master"&gt;FM&lt;/span&gt;&amp;nbsp;Heisenberg01&lt;/a&gt;&lt;span title="Bullet rating over 25,761 games" data-icon="" class="text"&gt;2904&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/dhoine98"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;dhoine98&lt;/a&gt;&lt;span title="Bullet rating over 7,460 games" data-icon="" class="text"&gt;2896&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/vroeli"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span class="utitle" title="Grandmaster"&gt;GM&lt;/span&gt;&amp;nbsp;vroeli&lt;/a&gt;&lt;span title="Bullet rating over 8,986 games" data-icon="" class="text"&gt;2888&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Think_Fast_Move_Fast"&gt;&lt;i class="line"&gt;&lt;/i&gt;Think_Fast_Move_Fast&lt;/a&gt;&lt;span title="Bullet rating over 329 games" data-icon="" class="text"&gt;2868&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;a class="online user-link ulpt" href="/@/Brown_player"&gt;&lt;i class="line"&gt;&lt;/i&gt;&lt;span clas... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210717 20:59:42.810" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:42.660" endtime="20210717 20:59:42.810"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.810" endtime="20210717 20:59:42.811"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.813" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.812" endtime="20210717 20:59:42.813"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.813" endtime="20210717 20:59:42.814"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.814" level="INFO">Length is 43536</msg>
+<status status="PASS" starttime="20210717 20:59:42.814" endtime="20210717 20:59:42.814"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:42.656" endtime="20210717 20:59:42.816" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.648" endtime="20210717 20:59:42.819"></status>
+</suite>
+<suite id="s1-s8" name="TC 008 Post User By ID" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_008_Post_User_By_ID.robot">
+<test id="s1-s8-t1" name="TC_008 Post, get user by ID">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.833" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:42.832" endtime="20210717 20:59:42.833"></status>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${users}</arg>
+<arg>data=${params}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.983" level="INFO">POST Request : url=https://lichess.org/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '43'} 
+ body=ids=aliquantus,chess-network,lovlas,georges 
+ </msg>
+<msg timestamp="20210717 20:59:42.983" level="INFO">POST Response : url=https://lichess.org/api/users 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:42 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body=[{"id":"chess-network","username":"Chess-Network","online":true,"perfs":{"chess960":{"games":578,"rating":2224,"rd":67,"prog":-2},"antichess":{"games":5,"rating":1531,"rd":260,"prog":0,"prov":true},"atomic":{"games":48,"rating":1994,"rd":160,"prog":2,"prov":true},"racingKings":{"games":2,"rating":1825,"rd":316,"prog":0,"prov":true},"ultraBullet":{"games":601,"rating":2125,"rd":109,"prog":4},"blitz":{"games":14188,"rating":2738,"rd":45,"prog":9},"kingOfTheHill":{"games":208,"rating":2336,"rd":102,"prog":39},"crazyhouse":{"games":662,"rating":1894,"rd":144,"prog":-152,"prov":true},"threeCheck":{"games":922,"rating":2256,"rd":98,"prog":41},"bullet":{"games":68541,"rating":2766,"rd":45,"prog":2},"correspondence":{"games":0,"rating":1500,"rd":500,"prog":0,"prov":true},"horde":{"games":4,"rating":1771,"rd":270,"prog":0,"prov":true},"puzzle":{"games":2753,"rating":2536,"rd":93,"prog":0},"classical":{"games":0,"rating":1500,"rd":500,"prog":0,"prov":true},"rapid":{"games":102,"rating":2539,"rd":143,"prog":21,"prov":true},"storm":{"runs":391,"score":73},"racer":{"runs":2,"score":75},"streak":{"runs":3,"score":72}},"createdAt":1418075816600,"profile":{"country":"US","location":"Pennsylvania","bio":"youtube.com/chessnetwork \r\nhttps://lichess.org/team/chessnetwork \r\nI can't address messages asking for a game. \r\nYou're welcome to connect at https://twitch.tv/ChessNetwork where I sometimes play against viewers.","firstName":"Jerry","links":"youtube.com/chessnetwork\r\ntwitch.tv/chessnetwork\r\ntwitter.com/chessnetwork\r\nfacebook.com/chessnetwork\r\npaypal.com/donate/?cmd=_s-xclick&amp;hosted_button_id=QLV226E6FUUWG\r\npatreon.com/ChessNetwork"},"seenAt":1626548162573,"patron":true,"playTime":{"total":15857403,"tv":2709743},"language":"en-US","title":"NM"},{"id":"georges","username":"georges","online":false,"perfs":{"blitz":{"games":3,"rating":1738,"rd":324,"prog":-68,"prov":true},"bullet":{"games":0,"rating":1500,"rd":500,"prog":0,"prov":true},"correspondence":{"games":0,"rating":1500,"rd":500,"prog":0,"prov":true},"classical":{"games":1,"rating":1516,"rd":436,"prog":0,"prov":true},"rapid":{"games":1,"rating":1516,"rd":436,"prog":0,"prov":true}},"createdAt":1373737151499,"seenAt":1373740828656,"playTime":{"total":3663,"tv":0}},{"id":"lovlas","username":"lovlas","online":false,"perfs":{"chess960":{"games":169,"rating":2184,"rd":143,"prog":-52,"prov":true},"antichess":{"games":23,"rating":1747,"rd":166,"prog":25,"prov":true},"atomic":{"games":71,"rating":1912,"rd":181,"prog":-3,"prov":true},"racingKings":{"games":28,"rating":1964,"rd":167,"prog":-43,"prov":true},"ultraBullet":{"games":532,"rating":2406,"rd":142,"prog":-53,"prov":true},"blitz":{"games":12868,"rating":2432,"rd":69,"prog":-28},"kingOfTheHill":{"games":61,"rating":2227,"rd":170,"prog":9,"prov":true},"crazyhouse":{"games":191,"rating":2191,"rd":177,"prog":14,"prov":true},"threeCheck":{"games":49,"rating":2098,"rd":186,"prog":-86,"prov":true},"bullet":{"games":13918,"rating":2619,"rd":69,"prog":1},"correspondence":{"games":25,"rating":2204,"rd":120,"prog":-29,"prov":true},"horde":{"games":31,"rating":2112,"rd":201,"prog":21,"prov":true},"puzzle":{"games":1325,"rating":2268,"rd":104,"prog":0},"classical":{"games":105,"rating":2524,"rd":109,"prog":35},"rapid":{"games":247,"rating":2265,"rd":142,"prog":-14,"prov":true},"storm":{"runs":1,"score":60}},"createdAt":1404571245440,"profile":{"country":"NO","bio":"Hi, IM lovlas. \r\n\r\nhttps://i.imgur.com/LiHIyDT.jpg","firstName":"Lasse Østebø","lastName":"Løvik","fideRating":2368,"links":"https://twitter.com/lovlas\r\nhttps://www.facebook.com/lasseol\r\nhttps://github.com/lovlas\r\nhttps://www.reddit.com/user/lovlas"},"seenAt":1626539954312,"patron":true,"playTime":{"total":6595458,"tv":1296816},"language":"en-GB","title":"IM"}] 
+ </msg>
+<msg timestamp="20210717 20:59:42.983" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:42.834" endtime="20210717 20:59:42.983"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.984" endtime="20210717 20:59:42.985"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:42.987" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:42.986" endtime="20210717 20:59:42.987"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:42.987" endtime="20210717 20:59:42.988"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:42.990" level="INFO">Length is 3790</msg>
+<status status="PASS" starttime="20210717 20:59:42.989" endtime="20210717 20:59:42.990"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:42.831" endtime="20210717 20:59:42.990" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.823" endtime="20210717 20:59:42.992"></status>
+</suite>
+<suite id="s1-s9" name="TC 009 Post Export Game By ID" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_009_Post_Export_Game_By_ID.robot">
+<test id="s1-s9-t1" name="TC_009 Post, export game by ID">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:43.004" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:43.003" endtime="20210717 20:59:43.005"></status>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${export}</arg>
+<arg>data=${params}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:43.150" level="INFO">POST Request : url=https://lichess.org/games/export/_ids 
+ path_url=/games/export/_ids 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '21'} 
+ body=ids=TJxUmbWK,4OtIh2oh 
+ </msg>
+<msg timestamp="20210717 20:59:43.162" level="INFO">POST Response : url=https://lichess.org/games/export/_ids 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:43 GMT', 'Content-Type': 'application/x-chess-pgn', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()'} 
+ body=[Event "Daily Classical Arena"]
+[Site "https://lichess.org/4OtIh2oh"]
+[Date "2017.08.30"]
+[White "wowk"]
+[Black "arex"]
+[Result "1-0"]
+[UTCDate "2017.08.30"]
+[UTCTime "20:21:03"]
+[WhiteElo "1662"]
+[BlackElo "1638"]
+[WhiteRatingDiff "+10"]
+[BlackRatingDiff "-11"]
+[Variant "Standard"]
+[TimeControl "600+0"]
+[ECO "C89"]
+[Termination "Time forfeit"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 c6 12. Bxd5 cxd5 13. Qe2 Bd6 14. Rh5 g6 15. Rxd5 Bxh2+ 16. Kxh2 Qxd5 17. d4 Bb7 18. f3 Rae8 19. Qf2 Qh5+ 20. Kg1 Re7 21. Bf4 Rfe8 22. Nd2 Re2 23. Qg3 h6 24. Rf1 g5 25. Ne4 Bxe4 26. fxe4 R2xe4 27. Be5 Qe2 28. Rf6 Re6 29. Rxe6 fxe6 30. Bf6 Qd1+ 31. Kf2 Re2+ 32. Kf3 Qf1+ 33. Kg4 Qf5+ 34. Kh5 Qxf6 35. Qb8+ 1-0
+
+
+ 
+ </msg>
+<msg timestamp="20210717 20:59:43.162" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:43.005" endtime="20210717 20:59:43.163"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:43.163" endtime="20210717 20:59:43.164"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:43.165" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:43.164" endtime="20210717 20:59:43.165"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:43.165" endtime="20210717 20:59:43.166"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:43.167" level="INFO">Length is 776</msg>
+<status status="PASS" starttime="20210717 20:59:43.166" endtime="20210717 20:59:43.167"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:43.003" endtime="20210717 20:59:43.167" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:42.995" endtime="20210717 20:59:43.169"></status>
+</suite>
+<suite id="s1-s10" name="TC 010 Get Current TV Games" source="C:\Users\Bartek\Desktop\Roboto Framework\TestCases\TC_010_Get_Current_TV_Games.robot">
+<test id="s1-s10-t1" name="TC_010 Get current TV Games">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>https://lichess.org/</arg>
+<arg>verify=true</arg>
+</arguments>
+<msg timestamp="20210717 20:59:43.179" level="INFO">Creating Session using : alias=lichess, url=https://lichess.org/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20210717 20:59:43.179" endtime="20210717 20:59:43.180"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>lichess</arg>
+<arg>url=${tv}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210717 20:59:43.322" level="INFO">GET Request : url=https://lichess.org/api/tv/channels 
+ path_url=/api/tv/channels 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210717 20:59:43.322" level="INFO">GET Response : url=https://lichess.org/api/tv/channels 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 17 Jul 2021 18:59:43 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Origin', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Origin, Authorization, If-Modified-Since, Cache-Control', 'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, DELETE', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Expect-CT': 'max-age=31536000, enforce', 'Origin-Trial': 'AmhZId3n3wpPrPxbXvXrp6SuKxcpIZOXg946vqruZMvtImR6gTj62ynXPIhq5wmbP6r637cE3SC55doAGBqJdQUAAABUeyJvcmlnaW4iOiJodHRwczovL2xpY2hlc3Mub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJBc3NlbWJseVNpbWQiLCJleHBpcnkiOjE2NDk4MDc5OTl9', 'X-Frame-Options': 'DENY', 'Permissions-Policy': 'interest-cohort=()', 'Content-Encoding': 'gzip'} 
+ body={"Bot":{"user":{"name":"SolistaBot","title":"BOT","id":"solistabot"},"rating":2473,"gameId":"wUYhaBsW"},"UltraBullet":{"user":{"name":"firstrainman2008","id":"firstrainman2008"},"rating":1906,"gameId":"c1hrc2BO"},"Bullet":{"user":{"name":"Maurevert","title":"GM","id":"maurevert"},"rating":2689,"gameId":"ABAppa6k"},"Antichess":{"user":{"name":"AgostinoBraca","id":"agostinobraca"},"rating":1966,"gameId":"VRwQjDr7"},"Computer":{"user":{"name":"tasar7","id":"tasar7"},"rating":1955,"gameId":"dyzEkEmT"},"Horde":{"user":{"name":"grego77","id":"grego77"},"rating":2115,"gameId":"vHKLaKW7"},"Rapid":{"user":{"name":"Robert_James123","id":"robert_james123"},"rating":2551,"gameId":"9iPy9Chj"},"Atomic":{"user":{"name":"jacobellaxd","id":"jacobellaxd"},"rating":1839,"gameId":"Ln8X7wik"},"Crazyhouse":{"user":{"name":"burpcow","id":"burpcow"},"rating":2533,"gameId":"cvPt2Oko"},"Chess960":{"user":{"name":"ElPicantovich","id":"elpicantovich"},"rating":2354,"gameId":"gYMmqKY5"},"King of the Hill":{"user":{"name":"anddes","id":"anddes"},"rating":1880,"gameId":"2dJCeIqt"},"Top Rated":{"user":{"name":"GMJOEY93","title":"GM","id":"gmjoey93"},"rating":2688,"gameId":"BrrKQeHV"},"Blitz":{"user":{"name":"Alexsur81","title":"GM","id":"alexsur81"},"rating":2812,"gameId":"aiN3ppVS"},"Racing Kings":{"user":{"name":"Boodesh","id":"boodesh"},"rating":1896,"gameId":"8W8IVeGI"},"Classical":{"user":{"name":"molomoso","id":"molomoso"},"rating":2130,"gameId":"otiNX851"},"Three-check":{"user":{"name":"VadimCernov","title":"IM","id":"vadimcernov"},"rating":2238,"gameId":"NU8MtwF4"}} 
+ </msg>
+<msg timestamp="20210717 20:59:43.323" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210717 20:59:43.180" endtime="20210717 20:59:43.323"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:43.324" endtime="20210717 20:59:43.325"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20210717 20:59:43.327" level="INFO">${code} = 200</msg>
+<status status="PASS" starttime="20210717 20:59:43.326" endtime="20210717 20:59:43.327"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210717 20:59:43.328" endtime="20210717 20:59:43.328"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20210717 20:59:43.329" level="INFO">Length is 1568</msg>
+<status status="PASS" starttime="20210717 20:59:43.329" endtime="20210717 20:59:43.329"></status>
+</kw>
+<status status="PASS" starttime="20210717 20:59:43.177" endtime="20210717 20:59:43.330" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210717 20:59:43.172" endtime="20210717 20:59:43.331"></status>
+</suite>
+<status status="PASS" starttime="20210717 20:59:36.883" endtime="20210717 20:59:43.335"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0">Critical Tests</stat>
+<stat pass="10" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="10" fail="0" id="s1" name="TestCases">TestCases</stat>
+<stat pass="1" fail="0" id="s1-s1" name="TC 001 Start Close Browser">TestCases.TC 001 Start Close Browser</stat>
+<stat pass="1" fail="0" id="s1-s2" name="TC 002 Get Request SimulPage">TestCases.TC 002 Get Request SimulPage</stat>
+<stat pass="1" fail="0" id="s1-s3" name="TC 003 Post Create Challenge">TestCases.TC 003 Post Create Challenge</stat>
+<stat pass="1" fail="0" id="s1-s4" name="TC 004 Get Board Analysis">TestCases.TC 004 Get Board Analysis</stat>
+<stat pass="1" fail="0" id="s1-s5" name="TC 005 Get Position Evaluation">TestCases.TC 005 Get Position Evaluation</stat>
+<stat pass="1" fail="0" id="s1-s6" name="TC 006 Get User Status">TestCases.TC 006 Get User Status</stat>
+<stat pass="1" fail="0" id="s1-s7" name="TC 007 Get Top 10 Users">TestCases.TC 007 Get Top 10 Users</stat>
+<stat pass="1" fail="0" id="s1-s8" name="TC 008 Post User By ID">TestCases.TC 008 Post User By ID</stat>
+<stat pass="1" fail="0" id="s1-s9" name="TC 009 Post Export Game By ID">TestCases.TC 009 Post Export Game By ID</stat>
+<stat pass="1" fail="0" id="s1-s10" name="TC 010 Get Current TV Games">TestCases.TC 010 Get Current TV Games</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
