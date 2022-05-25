@@ -14,18 +14,19 @@ ${code}=    convert to string
 *** Test Cases ***
 TC_002 Get Request Test on Simul Page
     Create Session with lichess site
-    Log response to console
-    Code should be equall to 200
+    ${response}=    get on session    lichess    url=${simul}
+    log to console    ${response.status_code}
+    Code should be equal to 200
     Verify response content is not empty
 
 *** Keywords ***
 Create Session with lichess site
-    Create Session    lichess    ${URL}}    verify=true
+    Create Session    lichess    ${URL}    verify=true
 
 Log response to console
     log to console    ${response.status_code}
 
-Code should be equall to 200
+Code should be equal to 200
     should be equal    ${code}    200
 
 Verify response content is not empty
